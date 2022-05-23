@@ -56,3 +56,31 @@ As we've seen writing synchronous code, can become problematic. We can however s
 - callbacks
 - promises
 - Async/Await
+
+### callbacks
+In my opinion,the best way to illustrate a callback and how they work, is by writing some code.
+Let's revisit the loop we did previously, but this time, let's write it asynchronously using callbacks:
+
+```js
+setTimeout(()=>{
+for(let i = 0;i < 10;i++){
+console.log(i)
+}
+},0)
+console.log("I will run before the for loop")
+```
+This is what will be printed to the console:
+```js
+"I will run before the for loop"
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+settimeout takes in two parameters. A callback function, and a number which represents how long the function should wait before being invoked. In our implementation, we called settimeout after zero milliseconds. 
